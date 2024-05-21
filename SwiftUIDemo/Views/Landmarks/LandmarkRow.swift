@@ -22,11 +22,10 @@ struct LandmarkRow: View {
     }
 }
 
-struct LandmarkRow_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
+#Preview {
+    let landmarks = ModelData().landmarks
+    return Group {
             LandmarkRow(landmark: landmarks[0])
             LandmarkRow(landmark: landmarks[1])
         }
-    }
 }

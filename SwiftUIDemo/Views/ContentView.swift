@@ -19,7 +19,7 @@ struct ContentView: View {
                 Circle().stroke(.white,lineWidth: 4)
             }.shadow(radius: 7)
             itemView()
-            Label()
+            LabelWrapper()
                 .frame(height: 10.0).padding([.bottom, .trailing], 20)
                          .border(.gray)
             CustomView()
@@ -43,7 +43,7 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-struct Label:UIViewRepresentable {
+struct LabelWrapper:UIViewRepresentable {
     func makeUIView(context: Context) -> UILabel {
         UILabel(frame: .zero)
     }

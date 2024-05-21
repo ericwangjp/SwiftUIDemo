@@ -12,7 +12,7 @@ struct MapView: View {
     var coordinate:CLLocationCoordinate2D
     
     var body: some View {
-//        Map(coordinateRegion: region)
+//        Map(coordinateRegion: .constant(region))
         MapWrapperView(coordinate: coordinate)
     }
 }
