@@ -13,23 +13,32 @@ struct HomeContentView: View {
     enum Tab {
         case featured
         case list
+        case mine
     }
     
     var body: some View {
-        TabView(selection: $selection) {
-            CategoryHome()
-                .tabItem {
-                    Label("Featured", systemImage: "star")
-                }
-                .tag(Tab.featured)
+//        TabView should be the parent view, with the tabs inside it having a NavigationStack as necessary
+            TabView(selection: $selection) {
+               CategoryHome()
+                   .tabItem {
+                       Label("精选", systemImage: "star")
+                   }
+                   .tag(Tab.featured)
 
 
-            LandmarkList()
-                .tabItem {
-                    Label("List", systemImage: "list.bullet")
-                }
-                .tag(Tab.list)
-        }
+               LandmarkList()
+                   .tabItem {
+                       Label("列表", systemImage: "list.bullet")
+                   }
+                   .tag(Tab.list)
+
+               MineContentView()
+                   .tabItem {
+                       Label("我的", systemImage: "person")
+                   }
+                   .tag(Tab.mine)
+            }
+
     }
 }
 

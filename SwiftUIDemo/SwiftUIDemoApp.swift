@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct SwiftUIDemoApp: App {
@@ -16,6 +17,7 @@ struct SwiftUIDemoApp: App {
 //            ContentView()
             HomeContentView().environment(modelData)
         }
+        .modelContainer(for: [Book.self,Prospect.self])
     }
 }
 
